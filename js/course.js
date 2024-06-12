@@ -1,174 +1,183 @@
       var course_all = [
         {
-          "institution": "MIT",
-          "course number": "18.656",
-          "course name": "Mathematical Statistics: A Non-Asymptotic Approach",
-          "grade": "",
-          "syllabus": "",
-          "field": "Theory/Mathematics",
-          "semester": "Master's"
-        },
-        {
-          "institution": "MIT",
-          "course number": "6.7900",
-          "course name": "Machine Learning",
+          "institution": "Brown",
+          "course number": "APMA1690",
+          "course name": "Computational Probability & Statistics",
           "grade": "A",
           "syllabus": "",
           "field": "Theory/Mathematics",
-          "semester": "Master's"
+          "semester": "Fall 2022"
         },
         {
-          "institution": "MIT",
-          "course number": "6.252",
-          "course name": "Nonlinear Optimization",
+          "institution": "Brown",
+          "course number": "APMA2550",
+          "course name": "Numerical Solution of Partial Differential Equations I",
           "grade": "A",
           "syllabus": "",
           "field": "Theory/Mathematics",
-          "semester": "Master's"
+          "semester": "Fall 2022"
         },
         {
-          "institution": "MIT",
-          "course number": "6.255",
-          "course name": "Optimization Methods",
+          "institution": "Brown",
+          "course number": "APMA2190",
+          "course name": "Nonlinear Dynamical System",
           "grade": "A",
           "syllabus": "",
           "field": "Theory/Mathematics",
-          "semester": "Master's"
+          "semester": "Fall 2022"
         },
         {
-          "institution": "MIT",
-          "course number": "16.32",
-          "course name": "Optimal Control and Estimation",
+          "institution": "Brown",
+          "course number": "CSCI2470",
+          "course name": "Advanced Deep Learning",
           "grade": "A",
           "syllabus": "",
-          "field": "Theory/Mathematics",
-          "semester": "Master's"
-        },
-        {
-          "institution": "MIT",
-          "course number": "16.413",
-          "course name": "Principles of Autonomy and Decision Making",
-          "grade": "A",
-          "syllabus": "",
-          "field": "Theory/Mathematics",
-          "semester": "Master's"
-        },
-        {
-          "institution": "UC Berkeley",
-          "course number": "Math 113",
-          "course name": "Abstract Algebra",
-          "grade": "A",
-          "syllabus": "",
-          "field": "Theory/Mathematics",
-          "semester": "2014 Summer"
-        },
-        {
-          "institution": "KAIST",
-          "course number": "EE201",
-          "course name": "Circuit Theory",
-          "grade": "A-",
-          "syllabus": "https://drive.google.com/open?id=1lvYqQKWHbK1ic54a379DXVIx3sC9qn1B",
-          "field": "Hardware",
-          "semester": "2014 Spring"
-        },
-        {
-          "institution": "KAIST",
-          "course number": "EE202",
-          "course name": "Signals and Systems",
-          "grade": "A-",
-          "syllabus": "https://drive.google.com/open?id=1YsAhYLMP2xXjBvfVIC_LvvH8h8WtTFhm",
           "field": "Systems/Software",
-          "semester": "2014 Spring"
+          "semester": "Fall 2022"
         },
         {
-          "institution": "KAIST",
-          "course number": "EE204",
-          "course name": "Electromagnetics",
-          "grade": "A+",
-          "syllabus": "https://drive.google.com/open?id=1vxTwy-iUvjuGqnzSTUnJRcVapNb2cCpe",
-          "field": "Hardware",
-          "semester": "2014 Fall"
-        },
-        {
-          "institution": "KAIST",
-          "course number": "EE205",
-          "course name": "Data Structures and Algorithms for Electrical Engineering",
-          "grade": "A+",
-          "syllabus": "https://drive.google.com/open?id=1G3ay6WpjpV6QoY6gsElm2dEqOEi3MsS1",
-          "field": "Systems/Software",
-          "semester": "2014 Fall"
-        },
-        {
-          "institution": "KAIST",
-          "course number": "EE209",
-          "course name": "Programming Structure for Electrical Engineering",
-          "grade": "A0",
-          "syllabus": "https://drive.google.com/open?id=1ryyEcJUzjOehpmil4UKmzXsbOj4Qs6Pd",
-          "field": "Systems/Software",
-          "semester": "2014 Fall"
-        },
-        {
-          "institution": "KAIST",
-          "course number": "EE210",
-          "course name": "Probability and Introductory Random Processes",
-          "grade": "A+",
-          "syllabus": "https://drive.google.com/open?id=1o51K3ZT7lvCKmyEMJWL3H1Dvr0UOEfU0",
+          "institution": "Brown",
+          "course number": "APMA2560",
+          "course name": "Numerical Solution of Partial Differential Equations II",
+          "grade": "A",
+          "syllabus": "",
           "field": "Theory/Mathematics",
-          "semester": "2017 Spring"
+          "semester": "Spring 2023"
         },
         {
-          "institution": "KAIST",
-          "course number": "EE211",
-          "course name": "Introduction to Physical Electronics",
-          "grade": "A+",
-          "syllabus": "https://drive.google.com/open?id=1LQxHHMsjOylt17_YU1yzFW4wDlXjOGQL",
-          "field": "Hardware",
-          "semester": "2015 Spring"
+          "institution": "Brown",
+          "course number": "APMA2580B",
+          "course name": "Computational Fluid Dynamics",
+          "grade": "A",
+          "syllabus": "",
+          "field": "Theory/Mathematics",
+          "semester": "Spring 2023"
         },
         {
-          "institution": "KAIST",
-          "course number": "EE303",
-          "course name": "Digital System Design",
-          "grade": "A+",
-          "syllabus": "https://drive.google.com/open?id=14k7eSzwPhqDTypNElnF4WdFoNe4n1VfO",
-          "field": "Hardware",
-          "semester": "2014 Fall"
+          "institution": "Brown",
+          "course number": "APMA2610",
+          "course name": "Recent Applications in Probability & Statistics",
+          "grade": "A",
+          "syllabus": "",
+          "field": "Theory/Mathematics",
+          "semester": "Spring 2023"
         },
         {
-          "institution": "KAIST",
-          "course number": "EE304",
-          "course name": "Electronic Circuits",
-          "grade": "A+",
-          "syllabus": "https://drive.google.com/open?id=10Eod9LE7sg2q-XCo1NI9t64VlVcnRoHh",
-          "field": "Hardware",
-          "semester": "2014 Fall"
+          "institution": "Brown",
+          "course number": "APMA2640",
+          "course name": "Theory of Probability II",
+          "grade": "A",
+          "syllabus": "",
+          "field": "Theory/Mathematics",
+          "semester": "Spring 2023"
         },
         {
-          "institution": "KAIST",
-          "course number": "EE305",
-          "course name": "Introduction to Electronics Design Lab.",
-          "grade": "A+",
-          "syllabus": "https://drive.google.com/open?id=1XYMcQWz4hWdeh43oz9-qQOYS8rx7YW54",
-          "field": "Hardware",
-          "semester": "2018 Fall"
-        },
-        {
-          "institution": "KAIST",
-          "course number": "EE321",
-          "course name": "Communication Engineering",
-          "grade": "A+",
-          "syllabus": "https://drive.google.com/open?id=19U7Qgxyi0gphzlMSjvzcQlqCBjKYOS5n",
+          "institution": "Brown",
+          "course number": "DATA2060",
+          "course name": "Machine Learning: from Theory to Algorithms",
+          "grade": "A",
+          "syllabus": "",
           "field": "Systems/Software",
-          "semester": "2017 Spring"
+          "semester": "Spring 2023"
         },
         {
-          "institution": "KAIST",
-          "course number": "CS341",
-          "course name": "Introduction to Computer Networks",
-          "grade": "A+",
-          "syllabus": "https://drive.google.com/open?id=1-XuIsIa7jJVUdzmjbvtY54LwkBXRFhbx",
+          "institution": "Brown",
+          "course number": "MATH2210",
+          "course name": "Real Function Theory (Advanced Real Analysis & Fourier Analysis)",
+          "grade": "A",
+          "syllabus": "",
+          "field": "Theory/Mathematics",
+          "semester": "Fall 2023"
+        },
+        {
+          "institution": "Brown",
+          "course number": "APMA2570B",
+          "course name": "Numerical Solution of Partial Differential Equations III",
+          "grade": "A",
+          "syllabus": "",
+          "field": "Theory/Mathematics",
+          "semester": "Fall 2023"
+        },
+        {
+          "institution": "Brown",
+          "course number": "DATA1030",
+          "course name": "Hands-on Data Science",
+          "grade": "A",
+          "syllabus": "",
           "field": "Systems/Software",
-          "semester": "2017 Fall"
+          "semester": "Fall 2023"
+        },
+        {
+          "institution": "Brown",
+          "course number": "DATA1050",
+          "course name": "Data Engineering",
+          "grade": "B",
+          "syllabus": "",
+          "field": "Systems/Software",
+          "semester": "Fall 2023"
+        },
+        {
+          "institution": "Harvard",
+          "course number": "MATH55A",
+          "course name": "Studies in Algebra and Group Theory",
+          "grade": "Audit",
+          "syllabus": "",
+          "field": "Theory/Mathematics",
+          "semester": "Fall 2023"
+        },
+        {
+          "institution": "Harvard",
+          "course number": "MATH289Y",
+          "course name": "Topics in Geometric PDEs",
+          "grade": "Audit",
+          "syllabus": "",
+          "field": "Theory/Mathematics",
+          "semester": "Fall 2023"
+        },
+        {
+          "institution": "Brown",
+          "course number": "CSCI1951Z",
+          "course name": "Fairness In Automated Decision-Making",
+          "grade": "A",
+          "syllabus": "",
+          "field": "Systems/Software",
+          "semester": "Spring 2024"
+        },
+        {
+          "institution": "Brown",
+          "course number": "DATA2020",
+          "course name": "Statistical Learning",
+          "grade": "A",
+          "syllabus": "",
+          "field": "Systems/Software",
+          "semester": "Spring 2024"
+        },
+        {
+          "institution": "Brown",
+          "course number": "DATA2050",
+          "course name": "Data Science Practicum",
+          "grade": "A",
+          "syllabus": "",
+          "field": "Systems/Software",
+          "semester": "Spring 2024"
+        },
+        {
+          "institution": "Harvard",
+          "course number": "MATH55B",
+          "course name": "Studies in Real and Complex Analysis",
+          "grade": "Audit",
+          "syllabus": "",
+          "field": "Theory/Mathematics",
+          "semester": "Spring 2024"
+        },
+        {
+          "institution": "Harvard",
+          "course number": "APMTH 231",
+          "course name": "Decision Theory",
+          "grade": "Audit",
+          "syllabus": " ",
+          "field": "Theory/Mathematics",
+          "semester": "Spring 2024"
         },
         {
           "institution": "KAIST",
