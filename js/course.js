@@ -338,17 +338,29 @@
             $(tblRow).appendTo("#table1");
           }
         });
-        $("#table2").append("<caption> &#9656; Math. Department</caption>");
+        $("#table2").append("<caption> &#9656; Pure/Applied Math. Department</caption>");
         $(tblHd).prependTo("#table2");
         $.each(course_all,function(i,course) {
-          if (course["course number"].slice(0,3) == "MAS" || course["course number"].slice(0,4) == "Math"||
-              course["course number"].slice(0,3) == "18.") {
+          if (course["course number"].slice(0,3) == "APMA" || course["course number"].slice(0,4) == "MATH"||
+              course["course number"].slice(0,3) == "APMTH") {
             tblRow =  "<tr class='course_row'><td>" + course["institution"] +
                       "</td><td>" + course["course number"] +
                       "</td><td>" + course["course name"] +
                       //"</td><td>" + course.grade +
                       "</td><td><a target='_blank' href='"+course.syllabus+"'>[syllabus]</a></td></tr>";
             $(tblRow).appendTo("#table2");
+          }
+        });
+        $("#table3").append("<caption> &#9656; DATA. Department</caption>");
+        $(tblHd).prependTo("#table3");
+        $.each(course_all,function(i,course) {
+          if (course["course number"].slice(0,3) == "DATA") {
+            tblRow =  "<tr class='course_row'><td>" + course["institution"] +
+                      "</td><td>" + course["course number"] +
+                      "</td><td>" + course["course name"] +
+                      //"</td><td>" + course.grade +
+                      "</td><td><a target='_blank' href='"+course.syllabus+"'>[syllabus]</a></td></tr>";
+            $(tblRow).appendTo("#table3");
           }
         });
 
@@ -373,7 +385,7 @@
       }
       function ordersem() {
         emptytable();
-        var semesters = ["2014 Spring", "2014 Summer", "2014 Fall", "2015 Spring", "2017 Spring", "2017 Fall", "2018 Spring", "2018 Fall", "2019 Spring", "Master's"];
+        var semesters = ["2014 Spring", "2014 Summer", "2014 Fall", "Fall 2022","Spring 2023","Fall 2023","Spring 2024","Fall 2024","Spring 2025"];
         for (var k=1; k<=semesters.length; k++) {
           $("#table"+k).append("<caption> &#9656; "+semesters[semesters.length-k]+"</caption>");
           $(tblHd).prependTo("#table"+k);
