@@ -341,8 +341,8 @@
         $("#table2").append("<caption> &#9656; Pure/Applied Math. Department</caption>");
         $(tblHd).prependTo("#table2");
         $.each(course_all,function(i,course) {
-          if (course["course number"].slice(0,3) == "APMA" || course["course number"].slice(0,4) == "MATH"||
-              course["course number"].slice(0,3) == "APMTH") {
+          if (course["course number"].slice(0,4) == "APMA" || course["course number"].slice(0,4) == "MATH"||
+              course["course number"].slice(0,5) == "APMTH") {
             tblRow =  "<tr class='course_row'><td>" + course["institution"] +
                       "</td><td>" + course["course number"] +
                       "</td><td>" + course["course name"] +
@@ -354,7 +354,7 @@
         $("#table3").append("<caption> &#9656; DATA. Department</caption>");
         $(tblHd).prependTo("#table3");
         $.each(course_all,function(i,course) {
-          if (course["course number"].slice(0,3) == "DATA") {
+          if (course["course number"].slice(0,4) == "DATA") {
             tblRow =  "<tr class='course_row'><td>" + course["institution"] +
                       "</td><td>" + course["course number"] +
                       "</td><td>" + course["course name"] +
