@@ -33,7 +33,35 @@
   #main{margin:0 auto 15px;padding:45px 30px 15px;width:100%;min-width:240px;text-align:center;background-color:var(--background-color)}
   .highlight{color:var(--highlight-color);font-weight:600}
   .highlight:hover{color:var(--highlight-color);font-weight:600}
-  
+
+  .content{
+    display:flex;
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: #666;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #ddd;
+}
+
+li a.active {
+    color: white;
+    background-color: #4CAF50;
+}
+
   .profile-pendant {display:none;bottom:-15px;right:-200px;position:absolute}
   @media (min-width: 768px) { .profile-pendant {display:block} }
   
