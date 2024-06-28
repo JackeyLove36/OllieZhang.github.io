@@ -40,26 +40,42 @@
     align-items: flex-end;
   }
 
+#navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #FFF;
+    background-color: #FFF;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+
+
 
 li {
     float: left;
 }
 
 li a {
-    display: block;
-    color: #666;
+    display: flex;
+    color: #FFD700;
     text-align: center;
-    padding: 14px 16px;
     text-decoration: none;
+    justify-content: space-between;
+    padding: 2px 10px;
+    width: 100%;
 }
 
 li a:hover:not(.active) {
-    background-color: #ddd;
+    background-color: #87CEEB ;
 }
 
 li a.active {
-    color: white;
-    background-color: #4CAF50;
+    color: #FFD700;
+    background-color: #87CEEB;
 }
 
   .profile-pendant {display:none;bottom:-15px;right:-200px;position:absolute}
@@ -229,8 +245,7 @@ li a.active {
 </section>
 
 
-<div id="navbar_outer">
-<div id="navbar_tab">
+
 <ul id="navbar">
   <li><a class="home_nav active" href="#home" onclick="make_active('home')">Home</a></li>
   <li><a class="research_nav" href="#research" onclick="make_active('research')">Research Experience</a></li>
@@ -238,7 +253,7 @@ li a.active {
   <li><a href="html/teacheringex.html">Teaching Experience</a></li>
   <li><a class="honor_nav" href="#honor" onclick="make_active('honor')">Honor</a></li>
   <li><a href="html/coursework.html">Coursework</a></li>
-</ul></div></div>
+</ul>
 <br>
 
 
