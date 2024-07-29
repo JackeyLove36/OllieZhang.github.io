@@ -13,6 +13,15 @@
     <link rel="shortcut icon" href="static/img/favicon.ico">
 
 
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.css" integrity="sha384-D+9gmBxUQogRLqvARvNLmA9hS2x//eK1FhVb9PiU86gmcrBrJAQT8okdJ4LMp2uv" crossorigin="anonymous">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.js" integrity="sha384-483A6DwYfKeDa0Q52fJmxFXkcPCFfnXMoXblOkJ4JcA8zATN6Tm78UNL72AKk+0O" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/contrib/auto-render.min.js" integrity="sha384-yACMu8JWxKzSp/C1YV86pzGiQ/l1YUfE8oPuahJQxzehAjEt2GiQuy/BIvl9KyeF" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
     <!--[if lt IE 9]>
       <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
@@ -316,43 +325,45 @@
 
 
 
-<section id="experience">
+<section id="research">
   <div class="main-content">
     <div class="content-container">
         <div class="main-news-container">
-            <h5 class="subtitle">Research Experience</h5>
+          <div id="pub-container">
+            <h5 class="subtitle">Publications
+                (
+                <a id="publication-by-selected" href="javascript:;" onclick="publicationBySelected();">show selected</a> /
+                <a id="publication-by-date" href="javascript:;" onclick="publicationByDate();">show all by date</a> /
+                <a id="publication-by-topic" href="javascript:;" onclick="publicationByTopic();">show all by topic</a>
+                )
+            </h5>
+            <p class="subtitle-aux"><span class="bold">Topics:</span>
+                <a href="#topic-optimal-control" onclick="return publicationByTopicSpecific(this)" data-topic="optimal-control">Optimal Control</a> /
+                <a href="#topic-multi-planning" onclick="return publicationByTopicSpecific(this)" data-topic="multi-planning">Multi-Agents Planning</a> /
+                <a href="#topic-category-theory" onclick="return publicationByTopicSpecific(this)" data-topic="category-theory">Applied Category Theory</a>
+                <br />
+                <span class="note">(*/†: indicates equal contribution.)</span>
+            </p>
+        </div>
+          <h5 class="subtitle">Research Experience</h5>
             <div class="row">
               <div class="col-md-12">
                   <img src="images/Brown_emblem.png" height=100px class="img-fixed"  alt="Brown" style="float: left; margin-right: 20px; margin-bottom: 20px;">
                   <li class="custom-li">Brown Crunch Group [Prof. Jerome Darbon]</li>
                   <li class="custom-li">Brown Robotics Group </li>
-                  <li class="custom-li">CSCI 1951A: Data Science TA </li>
-                  <li class="custom-li">APMA 1690: Computational Prob & Stats TA</li>
+                  <li class="custom-li">TA in CSCI 1951A: Data Science </li>
+                  <li class="custom-li">TA in APMA 1690: Computational Prob & Stats</li>
               </div>
               <div class="col-md-12">
                   <img src="images/harvard_em.png" height=100px class="img-fixed"  alt="Harvard"style="float: left; margin-right: 20px; margin-bottom: 20px;"">
                   <li class="custom-li"> Research in Computational Robotics Group </li>
                   <li class="custom-li"> Research in Harvard ML Group advised by Prof. Sitan Chen</li>
             </div>
+            <div class="col-md-12">
+              <img src="images/MIT_em.png" height=100px class="img-fixed"  alt="Harvard"style="float: left; margin-right: 20px; margin-bottom: 20px;"">
+              <li class="custom-li"> Research in Julia Lab </li>
           </div>
-
-
-            <div id="pub-container">
-                <h5 class="subtitle">Publications
-                    (
-                    <a id="publication-by-selected" href="javascript:;" onclick="publicationBySelected();">show selected</a> /
-                    <a id="publication-by-date" href="javascript:;" onclick="publicationByDate();">show all by date</a> /
-                    <a id="publication-by-topic" href="javascript:;" onclick="publicationByTopic();">show all by topic</a>
-                    )
-                </h5>
-                <p class="subtitle-aux"><span class="bold">Topics:</span>
-                    <a href="#topic-optimal-control" onclick="return publicationByTopicSpecific(this)" data-topic="optimal-control">Optimal Control</a> /
-                    <a href="#topic-multi-planning" onclick="return publicationByTopicSpecific(this)" data-topic="multi-planning">Multi-Agents Planning</a> /
-                    <a href="#topic-category-theory" onclick="return publicationByTopicSpecific(this)" data-topic="category-theory">Applied Category Theory</a>
-                    <br />
-                    <span class="note">(*/†: indicates equal contribution.)</span>
-                </p>
-            </div>
+        </div>
         </div>
     </div>
   </div>
@@ -360,16 +371,27 @@
 
 
 
-
-
 <section id="project">
   <div class="main-content">
     <div class="content-container">
         <div class="main-news-container">
-            <h5 class="subtitle">Selective Project</h5>
-            <ul>
-              
-            </ul>
+            <h5 class="subtitle">Selective Projects</h5>
+            <div class="row">
+              <div class="col-md-12">
+                  <img src="images/Brown_emblem.png" height=100px class="img-fixed"  style="float: left; margin-right: 20px; margin-bottom: 20px;">
+                 </div>
+              <div class="col-md-12">
+                  <img src="images/harvard_em.png" height=100px class="img-fixed" style="float: left; margin-right: 20px; margin-bottom: 20px;"">
+                  </div>
+            <div class="col-md-12">
+              <img src="images/Project_Image/Project1.jpg" height=100px class="img-fixed" style="float: left; margin-right: 20px; margin-bottom: 20px;"">
+              <p> Implementing Upwind Scheme, Centered Scheme, Lax-Wendroff Scheme, Lax-Friedrichs Scheme, Backward Euler Scheme and Crank-Nicholson Method to the function: \(f(x)=\begin{cases}
+                x & \text{for x} \in [0, \pi] \\
+                2\pi-x & \text{for x} \in (\pi, 2\pi] 
+              \end{cases}\) with evaluation of errors.
+              </p>
+                 
+              </div>
         </div>
     </div>
   </div>
