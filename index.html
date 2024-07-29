@@ -11,196 +11,231 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="static/img/favicon.ico">
-<style type="text/css">
-  :root {
-      --background-color: #fefbf5;
-      --highlight-color: #b6274e;
-      --main-color: #684e43;
-      --link-color: #86985c;
-      --link-color-hover: #8e6e29;
-      --secondary-link-color: #6d8436;
-      --secondary-link-border-color: #a5af97;
-      --secondary-content-background-color: #fffefc;
-      --link-button-background-color: #fffdfa;
-      /* a8826c 324d67 */
-  }
-  body{margin:0;padding:0;}
-  a{color:var(--link-color)}
-  a:hover{color:var(--link-color-hover);cursor:pointer}
-  #background{position:fixed;top:0;overflow:hidden;height:0}
-  #wave-canvas{display:block;position:relative;top:0;left:5%;width:55%;min-width:850px;height:150px;border:0}
-  /*#main{z-index:2;margin:0 auto;position:absolute;padding-top:5%;width:100%;min-width:240px;text-align:center;background-color:rgb(254,250,246)}*/
-  #main{margin:0 auto 15px;padding:45px 30px 15px;width:100%;min-width:240px;text-align:center;background-color:var(--background-color)}
-  .highlight{color:var(--highlight-color);font-weight:600}
-  .highlight:hover{color:var(--highlight-color);font-weight:600}
 
-  .content{
-    display:flex;
-    flex-direction: row;
-    align-items: flex-end;
+
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style type="text/css">
+      /* Color Scheme: Orange / Yellow */
+      :root {
+          --background-color: #fefbf5;
+          --highlight-color: #b6274e;
+          --main-color: #684e43;
+          --link-color: #86985c;
+          --link-color-hover: #8e6e29;
+          --secondary-link-color: #6d8436;
+          --secondary-link-border-color: #a5af97;
+          --secondary-content-background-color: #fffefc;
+          --link-button-background-color: #fffdfa;
+          /* a8826c 324d67 */
+      }
+      /* Color Scheme: Blue / Summer */
+      :root {
+          --background-color: #f5fbfe;
+          --highlight-color: #b6274e;
+          --main-color: #225573;
+          --link-color: #547b5b;
+          --link-color-hover: #292c1f;
+          --secondary-link-color: #6d8436;
+          --secondary-link-border-color: #7d99b1;
+          --secondary-content-background-color: #feffff;
+          --link-button-background-color: #fafdff;
+          /* a8826c 324d67 */
+      }
+      p {
+          font-size: 1.1em; /* Slightly larger for readability */
+          text-align: justify; /* Ensures even text alignment */
+      }
+      .img-fixed {
+      width: 150px; /* Adjust width as needed */
+      height: 150px; /* Adjust height as needed */
+      object-fit: cover; /* Ensure the image covers the given width and height */
+      float: left;
+      margin-right: 20px;
+      margin-bottom: 20px;
   }
 
+  .custom-li {
+      font-size: 1.2em; /* Adjust font size as needed */
+      font-family: 'Arial', sans-serif; /* Change to desired font */
+      color: #333333; /* Change text color as needed */
+      margin-bottom: 10px; /* Adjust space between list items as needed */
+  }
+      
+      body{margin:0;padding:0;}
+      a{color:var(--link-color)}
+      a:hover{color:var(--link-color-hover);cursor:pointer}
+      #background{position:fixed;top:0;overflow:hidden;height:0}
+      #wave-canvas{display:block;position:relative;top:0;left:5%;width:55%;min-width:850px;height:150px;border:0}
+      /*#main{z-index:2;margin:0 auto;position:absolute;padding-top:5%;width:100%;min-width:240px;text-align:center;background-color:rgb(254,250,246)}*/
+      #main{margin:0 auto 15px;padding:45px 30px 15px;width:100%;min-width:240px;text-align:center;background-color:var(--background-color)}
+      .highlight{color:var(--highlight-color);font-weight:600}
+      .highlight:hover{color:var(--highlight-color);font-weight:600}
+      
+      .profile-pendant {display:none;bottom:-15px;right:-200px;position:absolute}
+      @media (min-width: 768px) { .profile-pendant {display:block} }
+      
+      .main-content{padding:0;text-align:center;cursor:default;text-align:center;}
+      /*.main-content{background:rgba(238,238,238,0.95);padding:0;text-align:center;cursor:default;text-align:center;}*/
+      /*.main-content{margin-left:6.5104167%;width:86.9791667%;}*/
+      @media (min-width: 768px) {.main-content{width:66%;min-width:668px;margin:auto;}}
+      @media (min-width: 1200px) {.main-content{width:66%;max-width:1080px;margin:auto;}}
+      
+      /* Avatar, Name, etc. */
+      #main-content-container{margin:0 auto;padding:15px 0 0;max-width:1080px;}
+      @media (min-width: 768px) { #main-content-container{padding:15px 0 0;} }
+      #main-content-container .col-avatar{text-align:center;min-width:220px;}
+      @media (min-width: 768px) { #main-content-container .col-avatar{text-align:center} }
+      #main-content-container .col-avatar .avatar{z-index:100;width:200px;height:auto;border-radius:100%;box-shadow:0 0 0 0.3em #eee;opacity:1;}
+      @media (min-width: 1200px) { #main-content-container .col-avatar .avatar{margin-bottom:-50px} }
+      
+      #main-content-container .col-info{height:100%;align-items:center;}
+      #main-info-container{padding-top:15px}
+      #main-info-container .col-name{text-align:center;margin-top:30px}
+      @media (min-width: 768px) { #main-info-container .col-name{text-align:left;margin-top:0;}
+      }
+      #main-info-container .col-name .text{text-align:left}
+      #main-info-container .col-name .name{margin:0;color:var(--main-color);font-size:1.85em;font-family:"Source Sans Pro",Helvetica,sans-serif}
+      #main-info-container .col-name .email{color:#666; font-size:14px}
+      #main-info-container .col-link{text-align:center;margin:-5px 0 -25px;}
+      #main-info-container .col-link ul {margin:0px auto auto;padding:0;list-style:none;text-align:center}
+      #main-info-container .col-link li {display:inline-block;margin:auto;padding:0 10px;color:#ccc;line-height:10px}
+      #main-info-container .col-link li a{width:45px;height:45px;color:#ccc;padding:0;font-size:45px;line-height:45px}
+      #main-info-container .col-link li a:focus,
+      #main-info-container .col-link li a:hover{text-decoration:none;cursor:hand}
+      #main-info-container .col-link li a.border{border:1px solid #ccc;border-radius:100%;}
+      #main-info-container .col-link li a.padding{padding:0px 0px;font-size:22px}
+      
+      /* Other */
+      .content-container{width:100%;padding:0 30px}
+      .main-news-container{margin:auto;padding: 0 0em;max-width:1080px;text-align:left;padding-top:30px;max-width:1080px;font-size:1rem;line-height:1.4}
+      @media (min-width: 1200px) { .main-news-container{padding-top:45px;} }
+      .main-news-container .subtitle{margin-top:0px;color:var(--main-color)}
+      
+      section.overview ul,section.overview li,section.overview h3,section.overview h1,section.overview p{margin:0;padding:0}
+      section.overview h1{font-weight:700}
+      section.overview li{font-weight:400;list-style:none}
+      .join,.up::after,.down::before{background-position:50% 50%}
+      .up::after,.down::before{background-repeat:no-repeat;content:"";display:block;height:20px}
+      .up::after{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3IiBoZWlnaHQ9IjQiIHZpZXdCb3g9IjAgMCA3IDQiPjxwYXRoIGZpbGw9IiM1NjZjN2YiIGQ9Ik0xIDRWM2gxVjJoM3YxaDF2MWgxVjJINlYxSDVWMEgydjFIMXYxSDB2MiIvPjwvc3ZnPg==)}
+      .down::before{background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI3cHgiIGhlaWdodD0iNHB4IiB2aWV3Qm94PSIwIDAgNyA0IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA3IDQiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwb2x5Z29uIGZpbGw9IiM1NjZjN2YiIHBvaW50cz0iNiwwIDYsMSA1LDEgNSwyIDIsMiAyLDEgMSwxIDEsMCAwLDAgMCwyIDEsMiAxLDMgMiwzIDIsNCA1LDQgNSwzIDYsMyA2LDIgNywyIDcsMCAiLz48L3N2Zz4=)}
+      .join{background-repeat:repeat-y;background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxcHgiIGhlaWdodD0iMXB4IiB2aWV3Qm94PSIwIDAgMSAxIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxIDEiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwYXRoIGZpbGw9IiM1NjZjN2YiIGQ9Ik0wLDBoMXYxSDBWMHoiLz48L3N2Zz4=)}
+      .thin,.thick{background:#ffffff}
+      .thin{border:1px solid var(--secondary-link-border-color);padding:.5em}
+      .main{text-align:center}
+      .main ul{display:block;width:150px;margin:1em auto 0}
+      ul.row{width:100%;display:flex;align-items:flex-start}
+      ul.row li.page{flex:1;margin:0 .5em;min-width:280px}
+      ul.row li.page.stretch{align-self:stretch}
+      ul.row li.page:first-child{margin-left:0}
+      ul.row li.page:last-child{margin-right:0}
+      ul.row li.page h3 + ul.content{margin-top:1.5em}
+      ul.row li.page ul.content li{border-top:1px solid var(--secondary-link-border-color);padding:2px 5px}
+      ul.row li.page ul.content li.level-2{padding:2px 12px}
+      ul.row li.page ul.content li ul.section li{border-top:none;padding:0}
+      ul.row li.page ul.content li ul.section li:before{content:"― "}
+      section.overview{background:var(--secondary-content-background-color);transition:max-width 400ms ease-in-out;padding:20px;margin:auto;z-index:99}
+      section.overview .thin h3{will-change:auto;transition:transform 400ms ease-in-out;transform-origin:0 50%}
+      section.overview .thin b{display:block;padding:2px 5px}
+      section.overview .thin ul.content{transition:opacity 200ms ease;opacity:1}
+      @media (max-width: 1480px) { ul.row li.page{margin:0} }
+      
+      .toggle-overview {background:var(--background-color);display:block;text-align:center;padding:5px;color:var(--main-color);font-weight:500}
+      .toggle-overview:hover {text-decoration:none}
+      /* @media (max-width: 560px) {section.overview {display:none}} */
+      .thick{border:3px solid var(--secondary-link-border-color);padding:.5em;font-size:1.25rem}
+      .thick>b{color:var(--main-color)}
+      .thick>p{font-size: 1rem}
+      .thick>p>a, .think>p>a:hover {background:var(--link-button-background-color);display:block;text-align:center;padding:5px;color:var(--main-color);font-weight:500;text-decoration:none}
+      
+      #pub-container{margin:auto;padding: 0 0em;max-width:1080px;text-align:left;padding-top:30px;max-width:1080px}
+      #pub-container .subtitle{color:var(--main-color);}
+      #pub-container .subtitle a {font-size:18px; color: var(--secondary-link-color); font-weight:400}
+      #pub-container .subtitle a.activated {color:#333333; font-weight:600}
+      #pub-container .subtitle a.activated:focus,
+      #pub-container .subtitle a.activated:hover {text-decoration:none;cursor:initial}
+      
+      #pub-container .subtitle-aux {font-size:1rem}
+      #pub-container .subtitle-aux a.activated {color:#333333}
+      #pub-container .subtitle-aux a.activated:focus,
+      #pub-container .subtitle-aux a.activated:hover {text-decoration:none;cursor:initial}
+      #pub-container .subtitle-aux .note{margin-left:1em;color:#999999;text-decoration:none;font-size:14px}
+      
+      #pub-card-container{}
+      #pub-card-container>h5{margin-bottom: 5px 0}
+      #pub-card-container .pub-card{width: 100%;padding-bottom:15px;font-size:1rem}
+      #pub-card-container .pub-card .col-l{text-align:center;padding-top:10px}
+      #pub-card-container .pub-card .col-r{padding-top:10px}
+      @media (min-width: 768px) {
+        #pub-card-container .pub-card .col-l{flex:0 0 30%;max-width:30%}
+        #pub-card-container .pub-card .col-r{flex:0 0 70%;max-width:70%}
+      }
+      #pub-card-container .pub-card img{width:100%;margin:0 auto}
+      #pub-card-container .pub-card-body{width:100%;background:transparent;padding-left:0px}
+      #pub-card-container .pub-card .title{font-weight:600;font-size:1rem;margin-bottom:4px;line-height:1.4}
+      #pub-card-container .pub-card .authors{font-weight:400;color:#666666;margin-bottom:4px;line-height:1.4}
+      #pub-card-container .pub-card .authors a{color:#666666}
+      #pub-card-container .pub-card .authors u{color:#333333;font-weight:600;text-decoration:none}
+      #pub-card-container .pub-card .conference{color:#333333;font-weight:600}
+      #pub-card-container .pub-card .note{display:block;color:#999999;text-decoration:none;font-size:14px}
+      #pub-card-container .pub-card .info{margin-bottom:0;}
+      #pub-card-container .row{margin:0}
+      #pub-card-container .col-l,
+      #pub-card-container .col-r{vertical-align:top;display:inline-block;margin:0;padding-left:0px}
+      
+      /* #footer{padding:0 0 1.5em;margin-top:2rem;min-width:240px;background:#fff;font-size:14px;line-height:12px;text-align:left;background:#fef8f3} */
+      #footer{padding:0 0 0.5em;margin-top:2rem;min-width:240px;background:#fff;font-size:14px;line-height:12px;text-align:left;}
+      #footer{background:url(static/img/loong/loong-bottom-summer-repeat.png); background-size: 15px 15px; background-repeat: repeat;}
+      #footer .container{max-width:540px;padding:0 45px;position:relative}
+      #footer .row{align-items:center}
+      #footer .comic{padding-right:15px;padding-top:15px;}
+      #footer .copyright{flex-grow:1;margin:25px auto 5px;text-align:center;display:block;font-size:1rem;line-height:1.4;color:var(--main-color)}
+      #footer .stat{width:60px;height:60px;overflow:hidden;margin:0 auto 5px;padding 0;}
+      @media (min-width: 420px){ #footer .stat{display:block;width:60px;height:60px;overflow:hidden;margin:5px auto -25px;padding-right:15px;} }
+      #footer a{color:#666666}
+      #footer a:hover{color:#333333}
+      
+      /* Navbar Styles */
 #navbar {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    border: 1px solid #FFF;
     background-color: #FFF;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around; /* This will evenly space the menu items */
     width: 100%;
 }
 
-li {
+#navbar li {
     float: left;
 }
 
-li a {
-    display: flex;
+#navbar li a {
+    display: block;
     color: #1b933d;
     text-align: center;
     text-decoration: none;
-    justify-content: space-between;
-    padding: 2px 10px;
-    width: 100%;
+    padding: 14px 20px;
 }
 
-li a:hover:not(.active) {
-    background-color: #87CEEB ;
+#navbar li a:hover:not(.active) {
+    background-color: #87CEEB;
 }
 
-li a.active {
+#navbar li a.active {
     color: #761a92;
     background-color: #e0ee14;
 }
 
-  .profile-pendant {display:none;bottom:-15px;right:-200px;position:absolute}
-  @media (min-width: 768px) { .profile-pendant {display:block} }
-  
-  .main-content{padding:0;text-align:center;cursor:default;text-align:center;}
-  /*.main-content{background:rgba(238,238,238,0.95);padding:0;text-align:center;cursor:default;text-align:center;}*/
-  /*.main-content{margin-left:6.5104167%;width:86.9791667%;}*/
-  @media (min-width: 768px) {.main-content{width:66%;min-width:668px;margin:auto;}}
-  @media (min-width: 1200px) {.main-content{width:66%;max-width:1080px;margin:auto;}}
-  
-  /* Avatar, Name, etc. */
-  #main-content-container{margin:0 auto;padding:15px 0 0;max-width:1080px;}
-  @media (min-width: 768px) { #main-content-container{padding:15px 0 0;} }
-  #main-content-container .col-avatar{text-align:center;min-width:220px;}
-  @media (min-width: 768px) { #main-content-container .col-avatar{text-align:center} }
-  #main-content-container .col-avatar .avatar{z-index:100;width:200px;height:200px;border-radius:100%;box-shadow:0 0 0 0.3em #eee;opacity:1;}
-  @media (min-width: 1200px) { #main-content-container .col-avatar .avatar{margin-bottom:-50px} }
-  
-  #main-content-container .col-info{height:100%;align-items:center;}
-  #main-info-container{padding-top:15px}
-  #main-info-container .col-name{text-align:center;margin-top:30px}
-  @media (min-width: 768px) { #main-info-container .col-name{text-align:left;margin-top:0;}
-  }
-  #main-info-container .col-name .text{text-align:left}
-  #main-info-container .col-name .name{margin:0;color:var(--main-color);font-size:1.85em;font-family:"Source Sans Pro",Helvetica,sans-serif}
-  #main-info-container .col-name .email{color:#666; font-size:14px}
-  #main-info-container .col-link{text-align:center;margin:-5px 0 -25px;}
-  #main-info-container .col-link ul {margin:0px auto auto;padding:0;list-style:none;text-align:center}
-  #main-info-container .col-link li {display:inline-block;margin:auto;padding:0 10px;color:#ccc;line-height:10px}
-  #main-info-container .col-link li a{width:45px;height:45px;color:#ccc;padding:0;font-size:45px;line-height:45px}
-  #main-info-container .col-link li a:focus,
-  #main-info-container .col-link li a:hover{text-decoration:none;cursor:hand}
-  #main-info-container .col-link li a.border{border:1px solid #ccc;border-radius:100%;}
-  #main-info-container .col-link li a.padding{padding:0px 0px;font-size:22px}
-  
-  /* Other */
-  .content-container{width:100%;padding:0 30px}
-  .main-news-container{margin:auto;padding: 0 0em;max-width:1080px;text-align:left;padding-top:30px;max-width:1080px;font-size:1rem;line-height:1.4}
-  @media (min-width: 1200px) { .main-news-container{padding-top:45px;} }
-  .main-news-container .subtitle{margin-top:0px;color:var(--main-color)}
-  
-  section.overview ul,section.overview li,section.overview h3,section.overview h1,section.overview p{margin:0;padding:0}
-  section.overview h1{font-weight:700}
-  section.overview li{font-weight:400;list-style:none}
-  .join,.up::after,.down::before{background-position:50% 50%}
-  .up::after,.down::before{background-repeat:no-repeat;content:"";display:block;height:20px}
-  .up::after{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3IiBoZWlnaHQ9IjQiIHZpZXdCb3g9IjAgMCA3IDQiPjxwYXRoIGZpbGw9IiM1NjZjN2YiIGQ9Ik0xIDRWM2gxVjJoM3YxaDF2MWgxVjJINlYxSDVWMEgydjFIMXYxSDB2MiIvPjwvc3ZnPg==)}
-  .down::before{background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI3cHgiIGhlaWdodD0iNHB4IiB2aWV3Qm94PSIwIDAgNyA0IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA3IDQiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwb2x5Z29uIGZpbGw9IiM1NjZjN2YiIHBvaW50cz0iNiwwIDYsMSA1LDEgNSwyIDIsMiAyLDEgMSwxIDEsMCAwLDAgMCwyIDEsMiAxLDMgMiwzIDIsNCA1LDQgNSwzIDYsMyA2LDIgNywyIDcsMCAiLz48L3N2Zz4=)}
-  .join{background-repeat:repeat-y;background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxcHgiIGhlaWdodD0iMXB4IiB2aWV3Qm94PSIwIDAgMSAxIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxIDEiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwYXRoIGZpbGw9IiM1NjZjN2YiIGQ9Ik0wLDBoMXYxSDBWMHoiLz48L3N2Zz4=)}
-  .thin,.thick{background:#ffffff}
-  .thin{border:1px solid var(--secondary-link-border-color);padding:.5em}
-  .thick{border:3px solid var(--secondary-link-border-color);padding:.5em;color:var(--main-color);font-size:1.25rem}
-  .main{text-align:center}
-  .main ul{display:block;width:150px;margin:1em auto 0}
-  ul.row{width:100%;display:flex;align-items:flex-start}
-  ul.row li.page{flex:1;margin:0 .5em;min-width:280px}
-  ul.row li.page.stretch{align-self:stretch}
-  ul.row li.page:first-child{margin-left:0}
-  ul.row li.page:last-child{margin-right:0}
-  ul.row li.page h3 + ul.content{margin-top:1.5em}
-  ul.row li.page ul.content li{border-top:1px solid var(--secondary-link-border-color);padding:2px 5px}
-  ul.row li.page ul.content li.level-2{padding:2px 12px}
-  ul.row li.page ul.content li ul.section li{border-top:none;padding:0}
-  ul.row li.page ul.content li ul.section li:before{content:"― "}
-  section.overview{background:var(--secondary-content-background-color);transition:max-width 400ms ease-in-out;padding:20px;margin:auto;z-index:99}
-  section.overview .thin h3{will-change:auto;transition:transform 400ms ease-in-out;transform-origin:0 50%}
-  section.overview .thin b{display:block;padding:2px 5px}
-  section.overview .thin ul.content{transition:opacity 200ms ease;opacity:1}
-  @media (max-width: 1480px) { ul.row li.page{margin:0} }
-  
-  .toggle-overview {background:var(--background-color);display:block;text-align:center;padding:5px;color:var(--main-color);font-weight:500}
-  .toggle-overview:hover {text-decoration:none}
-  /* @media (max-width: 560px) {section.overview {display:none}} */
-  .thick>p {font-size: 1rem}
-  .thick>p>a, .think>p>a:hover {background:var(--link-button-background-color);display:block;text-align:center;padding:5px;color:var(--main-color);font-weight:500;text-decoration:none}
-  
-  #pub-container{margin:auto;padding: 0 0em;max-width:1080px;text-align:left;padding-top:30px;max-width:1080px}
-  #pub-container .subtitle{color:var(--main-color);}
-  #pub-container .subtitle a {font-size:18px; color: var(--secondary-link-color); font-weight:400}
-  #pub-container .subtitle a.activated {color:#333333; font-weight:600}
-  #pub-container .subtitle a.activated:focus,
-  #pub-container .subtitle a.activated:hover {text-decoration:none;cursor:initial}
-  
-  #pub-container .subtitle-aux {font-size:1rem}
-  #pub-container .subtitle-aux a.activated {color:#333333}
-  #pub-container .subtitle-aux a.activated:focus,
-  #pub-container .subtitle-aux a.activated:hover {text-decoration:none;cursor:initial}
-  #pub-container .subtitle-aux .note{margin-left:1em;color:#999999;text-decoration:none;font-size:14px}
-  
-  #pub-card-container{}
-  #pub-card-container>h5{margin-bottom: 5px 0}
-  #pub-card-container .pub-card{width: 100%;padding-bottom:15px;font-size:1rem}
-  #pub-card-container .pub-card .col-l{text-align:center;padding-top:10px}
-  #pub-card-container .pub-card .col-r{padding-top:10px}
-  @media (min-width: 768px) {
-    #pub-card-container .pub-card .col-l{flex:0 0 30%;max-width:30%}
-    #pub-card-container .pub-card .col-r{flex:0 0 70%;max-width:70%}
-  }
-  #pub-card-container .pub-card img{width:100%;margin:0 auto}
-  #pub-card-container .pub-card-body{width:100%;background:transparent;padding-left:0px}
-  #pub-card-container .pub-card .title{font-weight:600;font-size:1rem;margin-bottom:4px;line-height:1.4}
-  #pub-card-container .pub-card .authors{font-weight:400;color:#666666;margin-bottom:4px;line-height:1.4}
-  #pub-card-container .pub-card .authors a{color:#666666}
-  #pub-card-container .pub-card .authors u{color:#333333;font-weight:600;text-decoration:none}
-  #pub-card-container .pub-card .conference{color:#333333;font-weight:600}
-  #pub-card-container .pub-card .note{display:block;color:#999999;text-decoration:none;font-size:14px}
-  #pub-card-container .pub-card .info{margin-bottom:0;}
-  #pub-card-container .row{margin:0}
-  #pub-card-container .col-l,
-  #pub-card-container .col-r{vertical-align:top;display:inline-block;margin:0;padding-left:0px}
-  
-  /* #footer{padding:0 0 1.5em;margin-top:2rem;min-width:240px;background:#fff;font-size:14px;line-height:12px;text-align:left;background:#fef8f3} */
-  #footer{padding:0 0 0.5em;margin-top:2rem;min-width:240px;background:#fff;font-size:14px;line-height:12px;text-align:left;}
-  #footer{background:url(static/img/loong/loong-bottom-repeat.png); background-size: 15px 15px; background-repeat: repeat;}
-  #footer .container{max-width:540px;padding:0 45px;position:relative}
-  #footer .row{align-items:center}
-  #footer .comic{padding-right:15px;padding-top:15px;}
-  #footer .copyright{flex-grow:1;margin:25px auto 5px;text-align:center;display:block;font-size:1rem;line-height:1.4;color:var(--main-color)}
-  #footer .stat{width:60px;height:60px;overflow:hidden;margin:0 auto 5px;padding 0;}
-  @media (min-width: 420px){ #footer .stat{display:block;width:60px;height:60px;overflow:hidden;margin:5px auto -25px;padding-right:15px;} }
-  #footer a{color:#666666}
-  #footer a:hover{color:#333333}
-  
-  .bold{font-weight:600}
-  .hide{display:none}
-      </style>
-  </head>
+
+.bold{font-weight:600}
+.hide{display:none}
+    </style>
+</head>
 
 <body>
 <section class="home" id="home">
@@ -213,7 +248,7 @@ li a.active {
                 </div>
                 <div class="col-sm-12 col-md-8">
                     <div id="main-info-container">
-                        <div class="profile-pendant"><img src="images/dogroll.jpg" height=150px; /></div>
+                        <div class="profile-pendant"><img src="images/shake.jpg" height=200px; /></div>
                         <div class="col-name">
                         <h1 class="name"><span>Ziao (Ollie) Zhang 仉子奥</span></h1>
                             <p class="email">Email: ziao_zhang [at] brown [dot] edu</p>
@@ -242,111 +277,161 @@ li a.active {
 
 </section>
 
-<ul id="navbar">
-  <li><a class="home_nav active" href="#home" onclick="make_active('home')">Home</a></li>
-  <li><a class="research_nav" href="#research" onclick="make_active('research')">Research Experience</a></li>
-  <li><a href="html/coursework.html">Selective Project</a></li>
-  <li><a href="html/teacheringex.html">Teaching Experience</a></li>
-  <li><a class="honor_nav" href="#honor" onclick="make_active('honor')">Honor</a></li>
-  <li><a href="html/coursework.html">Coursework</a></li>
-</ul>
-<br>
-
-
-
-
-
+<nav>
+  <ul id="navbar">
+      <li><a class="home_nav active" href="#home" onclick="make_active('home')">Home Site</a></li>
+      <li><a class="research_interest_nav" href="#research_interest" onclick="make_active('research_interest')">Research Interests & News</a></li>
+      <li><a class="research_nav" href="#research" onclick="make_active('research')">Experience (RA and Teaching)</a></li>
+      <li><a class="project_nav" href="#project" onclick="make_active('project')">Selective Projects</a></li>
+      <li><a class="honor_nav" href="#honor" onclick="make_active('honor')">Honors</a></li>
+      <li><a href="html/coursework.html">Courseworks</a></li>
+  </ul>
+</nav>
 
 </section>
 
-<div class="content-container">
-  <div id="pub-container">
-      <h5 class="subtitle">Publications
-      (
-          <a id="publication-by-selected" href="javascript:;", onClick="publicationBySelected();">show selected</a> /
-          <a id="publication-by-date" href="javascript:;", onClick="publicationByDate();">show all by date</a> /
-          <a id="publication-by-topic" href="javascript:;", onClick="publicationByTopic();">show all by topic</a>
-      )
-      </h5>
-      <p class="subtitle-aux"><span class="bold">Topics:</span>
-          <a href="#topic-optimal-control" onClick="return publicationByTopicSpecific(this)" data-topic="optimal-control">Optimal Control</a> /
-          <a href="#topic-multi-planning" onClick="return publicationByTopicSpecific(this)" data-topic="multi-planning">Multi-Agents Planning</a> /
-          <a href="#topic-category-theory" onClick="return publicationByTopicSpecific(this)" data-topic="category-theory">Applied Category Theory</a>
-          <br />
-          <!--
-          Past topics: <a href="#topic-vision" onClick="return publicationByTopicSpecific(this)" data-topic="vision">Object Detection</a> /
-          <a href="#topic-nlp" onClick="return publicationByTopicSpecific(this)" data-topic="nlp">Structured NLP</a>-->
-          <span class="note">(*/†: indicates equal contribution.)</span>
-      </p>
+
+
+<section id="research_interest">
+<div class="main-content">
+  <div class="content-container">
+      <div class="main-news-container">
+          <h5 class="subtitle">Research Interests</h5>
+          <p>
+          My long-term research aims to design the computational tools or deep learning models to solve the hardest problem with achieving high performance in computing and provable guarantees in algorithm. 
+          With solid background in numerical PDEs, theoretical computer science and optimal control, I plan to explore unsolvable problem in Multi-Path Planning Problem & Optimal Control (EECS), High-Dimensional Hamilton-Jacobian Bellman Equation (Applied Math), and Earth Turbulance Modeling (Plantery). The following diagram highlights my works: 
+
+          </p>
+          <h5 class="subtitle" style="margin-top:30px">News</h5>
+          <ul>
+          <li> I got in the Citadel Invitational Datathon in Summer 2024 to compete with Top Undergraduate and Graduate Students in North America (150/3000) </li>
+          <li> I joined the Harvard SEAS at Computational Robotics Group working with Prof. Hank Yang working in using PINNs to solve Inverted Pendulum Problem</li>
+          <li> I joined the Julia Lab at MIT CSAIL working with Prof. Christ Rackauckas in BoundaryVal.jl</li>
+          </ul>
+</section>
+
+
+
+
+
+
+
+<section id="experience">
+  <div class="main-content">
+    <div class="content-container">
+        <div class="main-news-container">
+            <h5 class="subtitle">Research Experience</h5>
+            <div class="row">
+              <div class="col-md-12">
+                  <img src="images/Brown_emblem.png" height=100px class="img-fixed"  alt="Brown" style="float: left; margin-right: 20px; margin-bottom: 20px;">
+                  <li class="custom-li">Brown Crunch Group [Prof. Jerome Darbon]</li>
+                  <li class="custom-li">Brown Robotics Group </li>
+                  <li class="custom-li">CSCI 1951A: Data Science TA </li>
+                  <li class="custom-li">APMA 1690: Computational Prob & Stats TA</li>
+              </div>
+              <div class="col-md-12">
+                  <img src="images/harvard_em.png" height=100px class="img-fixed"  alt="Harvard"style="float: left; margin-right: 20px; margin-bottom: 20px;"">
+                  <li class="custom-li"> Research in Computational Robotics Group </li>
+                  <li class="custom-li"> Research in Harvard ML Group advised by Prof. Sitan Chen</li>
+            </div>
+          </div>
+
+
+            <div id="pub-container">
+                <h5 class="subtitle">Publications
+                    (
+                    <a id="publication-by-selected" href="javascript:;" onclick="publicationBySelected();">show selected</a> /
+                    <a id="publication-by-date" href="javascript:;" onclick="publicationByDate();">show all by date</a> /
+                    <a id="publication-by-topic" href="javascript:;" onclick="publicationByTopic();">show all by topic</a>
+                    )
+                </h5>
+                <p class="subtitle-aux"><span class="bold">Topics:</span>
+                    <a href="#topic-optimal-control" onclick="return publicationByTopicSpecific(this)" data-topic="optimal-control">Optimal Control</a> /
+                    <a href="#topic-multi-planning" onclick="return publicationByTopicSpecific(this)" data-topic="multi-planning">Multi-Agents Planning</a> /
+                    <a href="#topic-category-theory" onclick="return publicationByTopicSpecific(this)" data-topic="category-theory">Applied Category Theory</a>
+                    <br />
+                    <span class="note">(*/†: indicates equal contribution.)</span>
+                </p>
+            </div>
+        </div>
+    </div>
   </div>
+</section>
+
+
+
+
+
+<section id="project">
+  <div class="main-content">
+    <div class="content-container">
+        <div class="main-news-container">
+            <h5 class="subtitle">Selective Project</h5>
+            <ul>
+              
+            </ul>
+        </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="honor">
+  <div class="main-content">
+    <div class="content-container">
+        <div class="main-news-container">
+            <h5 class="subtitle">Honor</h5>
+            <ul>
+                <li>Citadel Invitational Datathon (2024)</li>
+                <li>Dean's List and High Distinction in Graduation (2022)</li>
+                <li>Brown Data Science Grants in Conference (2022)</li>
+                <li>Harvard-MIT Mathematics Tournament (4th Place) (2019)</li>
+                <li>Chinese Mathematics Competition First Class Award (2019)</li>
+                <li>British Mathematics Olympiad Silver Medal with Book Prize [Top 30] (2019)</li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</section>
+
+
+
+<div style="width: 100%; text-align: center; padding: 20px 0;">
+  <p style="font-size: 1.5em; text-align: right; margin: 0;">
+      Template modified from <a href="https://youngjae-min.github.io/">Youngjae Min</a> and <a href="https://jiayuanm.com/">Jiayuan Mao</a>.
+  </p>
 </div>
 
 
 
-</table>
 
 
-</section>
+<script>
+  function make_active(section) {
+      var navbarLinks = document.querySelectorAll('#navbar li a');
+      navbarLinks.forEach(link => link.classList.remove('active'));
+      document.querySelector(`.${section}_nav`).classList.add('active');
+  }
 
-<br>
-<section class="honor" id="honor">
-  <tr><td>
-    <sectionheading>&nbsp;&nbsp;Honors and Awards</sectionheading>
-    <ul>
-    <li> Citadel Datathon</li>
-    <li> ACM-ICPC Brown Team</li>
-    <li> High Distinction in Graduation (6%) </li>
-    <li> Brown Data Science Grants in Conference</li>
-    <li> Harvard-MIT Mathematics Tournament (4th Place) </li>
-    <li> Chinese Mathematics Competition First Class Award</li>
-    <li> British Mathematics Olympiad Silver Medal with Book Prize (Top 30)</li>
-    </ul>
-  </td></tr>
-</section>
+  function publicationBySelected() {
+      // Add your function implementation here
+  }
 
-<table width="100%" align="center" border="0" cellspacing="0" cellpadding="2">
-    <tr><td><br><p align="right"><font size="1.5">
-    Template modified from <a href="https://youngjae-min.github.io/">Youngjae Min</a> and <a href="https://jiayuanm.com/">Jiayuan Mao</a>.
-    </font></p></td></tr>
-</table>
+  function publicationByDate() {
+      // Add your function implementation here
+  }
 
-  </td></tr>
-</table>
+  function publicationByTopic() {
+      // Add your function implementation here
+  }
 
-<script xml:space="preserve" language="JavaScript">
-hideallbibs();
+  function publicationByTopicSpecific(element) {
+      var topic = element.getAttribute('data-topic');
+      // Add your function implementation here to filter publications by the specific topic
+      return false;
+  }
 </script>
-<script xml:space="preserve" language="JavaScript">
-hideblock('cdc23_coils_abs');
-</script>
-<script xml:space="preserve" language="JavaScript">
-hideblock('icml23_sogd_abs');
-</script>
-<script xml:space="preserve" language="JavaScript">
-hideblock('icra23_dsk3dom_abs');
-</script>
-<script xml:space="preserve" language="JavaScript">
-hideblock('cdc22_orfit_abs');
-</script>
-<script xml:space="preserve" language="JavaScript">
-hideblock('icra21_kdogm_abs');
-</script>
-<script xml:space="preserve" language="JavaScript">
-hideblock('ijcas_gpssm_abs');
-</script>
-<script xml:space="preserve" language="JavaScript">
-hideblock('access_admm_abs');
-</script>
-<script xml:space="preserve" language="JavaScript">
-hideblock('gnc20_gps_abs');
-</script>
-<script xml:space="preserve" language="JavaScript">
-hideblock('isit19_nn_abs');
-</script>
-<script xml:space="preserve" language="JavaScript">
-hideblock('jksnt_slowness_abs');
-</script>
-<script src="js/navscroll.js"></script>
+
 </body>
 
 </html>
